@@ -29,19 +29,38 @@ java -jar credentialgenerator-1.0-SNAPSHOT.jar
 ```
 ## 🧬 Patrones Implementados
 - **🔄 Patrón Prototype**
+
+- Prototype es utilizado para crear multiples clones, los cuales funcionan como plantillas para las credenciales y agilizar el flujo del programa.
+
 ```
-// Ejemplo de uso:
-Credencial prototipo = new CredencialPlantilla();
-Credencial personalizada = prototipo.clone();
-personalizada.setNombreParticipante("Juanito Lechuga");
-personalizada.setTipo("Estudiante");
+    public void saveCredentialToArray(String eventName, String name, String charge, String rut) {
+    try {
+        Credential cred = new Credential(
+            eventName,
+            charge,
+            name,
+            rut,
+            LocalDate.now()
+        );
+        credentials.add(cred);
+        JOptionPane.showMessageDialog(null, "Credencial guardada correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    } catch (Exception e) {
+        System.out.println("Error al guardar la credencial: " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "No se ha podido guardar la credencial, intentelo nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+    }}
 ```
+
 - **🔒 Patrón Singleton**
+
+- Singleton es utilizado para evitar redundancias en instancias de la clase Main y poder acceder a los metodos de control de manera mucho más eficiente.
+  
 ```
-// Configuración global del evento
-ConfiguracionEvento config = ConfiguracionEvento.getInstancia();
-config.setNombreEvento("Conferencia Patrones de Diseño");
-config.setFecha("15-Nov-2023");
+ public static Main getInstance() {
+        if (instance == null) {
+            instance = new Main();
+        }
+        return instance;
+    }
 ```
 
 📊 Diagrama de Clases UML
