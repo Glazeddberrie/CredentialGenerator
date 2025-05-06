@@ -63,12 +63,12 @@ java -jar credentialgenerator-1.0-SNAPSHOT.jar
     }
 ```
 
-📊 Diagrama de Clases UML
+**📊 Diagrama de Clases UML**
 
 ![image](https://github.com/user-attachments/assets/f360d2f1-7fe1-4c2f-b652-6482d6bcaa82)
 
 
-📸 Capturas del Sistema
+**📸 Capturas del Sistema**
 
 ![image](https://github.com/user-attachments/assets/41300392-aae2-432a-803b-28f0fa9989e3)
 
